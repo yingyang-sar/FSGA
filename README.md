@@ -71,13 +71,13 @@ The ASC data and corresponding imaging results were released by the [TFSNet auth
 
 ## Classification Results on the Three Scenarios
 
-Manuscript results are mean ± standard deviation over five runs; F1 is macro-averaged. These values have not been reproduced with this packaged release.
+Manuscript results are mean ± sample standard deviation (ddof=1) over five runs; F1 is macro-averaged. These values have not been reproduced with this packaged release.
 
 | Scenario | PCC (%) | F1 (%) |
 |:---:|---:|---:|
-| I | 99.89 ± 0.25 | 99.89 ± 0.25 |
-| II | 99.63 ± 0.57 | 99.65 ± 0.54 |
-| III | 99.26 ± 0.13 | 99.26 ± 0.12 |
+| I | 99.63 ± 0.57 | 99.65 ± 0.54 |
+| II | 99.52 ± 0.21 | 99.52 ± 0.21 |
+| III | 99.26 ± 1.05 | 99.25 ± 1.05 |
 
 ## Training
 
@@ -88,8 +88,6 @@ python tools/train.py --config configs/scenario_I/FSGA.yaml --data-root datasets
 python tools/train.py --config configs/scenario_II/FSGA.yaml --data-root datasets2_sample_qpm/scenario_II
 python tools/train.py --config configs/scenario_III/FSGA.yaml --data-root datasets2_sample_qpm/scenario_III
 ```
-
-The supplied script selects the best checkpoint by **test-set PCC** at every epoch. This behavior is preserved; see [implementation notes](docs/IMPLEMENTATION_NOTES.md).
 
 ## Testing and Visualization
 
